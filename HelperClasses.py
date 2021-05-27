@@ -165,7 +165,7 @@ users:""")
     sudo: [ "ALL=(ALL) NOPASSWD:ALL" ]
     shell: /bin/bash
     ssh-authorized-keys: 
-      - ssh-rsa {user.SSHKey}""")
+      - {user.SSHKey}""")
         FirstRunCommands = FirstRunCommands + BootCommands + UserBlock
         return  ''.join(FirstRunCommands)
 
