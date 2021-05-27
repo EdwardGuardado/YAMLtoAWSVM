@@ -1,0 +1,25 @@
+---
+  # This YAML configuration specifies a server with two volumes and two users
+  server:
+    instance_type: t2.micro
+    ami_type: amzn2
+    architecture: x86_64
+    root_device_type: ebs
+    virtualization_type: hvm
+    min_count: 1
+    max_count: 1
+    base_key_name: --EC2 User can post one of their own valid keys here to allow connection in the case no users are set up. This must be blank or have a valid key,--
+    volumes:
+      - device: /dev/xvda
+        size_gb: 10
+        type: ext4
+        mount: /
+      - device: /dev/xvdf
+        size_gb: 100
+        type: xfs
+        mount: /data
+    users:
+      - login: user1
+        ssh_key: --user1 ssh public key goes here. This is an example ssh-rsa AB3nzExample. Do Not forget ssh-rsa prefix. --
+      - login: user2
+        ssh_key: --user2 ssh public key goes here. This is an example ssh-rsa AB3nzExample. Do Not forget ssh-rsa prefix. --
