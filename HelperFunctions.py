@@ -37,7 +37,7 @@ def ConvertYamlToEC2(yamlPath : str) -> HelperClasses.EC2Instance:
                 print("Incompatible format for a given volume. Exception: "+ exc)
     
     try:
-        finalEC2Instance = HelperClasses.EC2Instance(configUsers,configVolumes,InstanceType,AMIType,Architecture,RootDeviceType,VirtualiztionType,MinCount,MaxCount,KeyNa)
+        finalEC2Instance = HelperClasses.EC2Instance(configUsers,configVolumes,InstanceType,AMIType,Architecture,RootDeviceType,VirtualiztionType,MinCount,MaxCount,KeyName)
     except Exception as exc:
         print("Invalid parameters given to EC2Instance constructor. Exception" + exc)
     
